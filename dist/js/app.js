@@ -9,3 +9,10 @@ let missed = 0;
 startButton.addEventListener('click', () => {
      startScreen.style.display = 'none';
 })
+
+//  Phrases to guess
+const phrases = ['A state of society where men may not speak their minds cannot long endure',
+                 'I like a man who grins when he fights',
+                 'History is written by the victors',
+                 'Great and good are seldom the same man',
+                 'Difficulties mastered are opportunities won'];
