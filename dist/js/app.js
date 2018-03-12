@@ -42,3 +42,5 @@ function addPhraseToDisplay(arr) {
           ul.appendChild(li);
      }
 }
+
+addPhraseToDisplay(phraseArray);
