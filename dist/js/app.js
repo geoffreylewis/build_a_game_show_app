@@ -21,10 +21,24 @@ const phrases = ['A state of society where men may not speak their minds cannot 
 
 
 // Randomly choose any phrase and split it
-getRandomPhraseAsArray(arr) {
-     let randomPhrase = arr[Math.floor(Math.random()*arr.length)];
-     let randomPhraseArray = specificPhrase.split("");
-     return randomPhraseArray;
+function getRandomPhraseAsArray(arr) {
+     const randomPhrase = arr[Math.floor(Math.random()*arr.length)];
+     const splitRandomPhrase = randomPhrase.split("");
+     return splitRandomPhrase;
 }
 
-getRandomPhraseAsArray(phrases);
+const phraseArray = getRandomPhraseAsArray(phrases);
+
+
+// Add random phrase to the game board display
+function addPhraseToDisplay(arr) {
+     const ul = document.querySelector('ul');
+     for (let i = 0; i < arr.length; i += 1) {
+          let li = document.createElement('li');
+          li.textContent = arr[i];
+          if (li.textContent != " ") {
+               li.className = 'letter';
+          }
+          ul.appendChild(li);
+     }
+}
