@@ -1,15 +1,16 @@
-// Variables
+// Global variables
 const startScreen = document.getElementById('overlay');
 const startButton = document.getElementsByClassName('btn__reset')[0];
 const qwertyKeyboard = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
+const ul = document.querySelector('ul');
 let missed = 0;
 
 
 // Hides start screen overlay when start button is clicked
 startButton.addEventListener('click', () => {
      startScreen.style.display = 'none';
-})
+});
 
 
 //  Phrases to guess
@@ -27,12 +28,9 @@ function getRandomPhraseAsArray(arr) {
      return splitRandomPhrase;
 }
 
-const phraseArray = getRandomPhraseAsArray(phrases);
-
 
 // Add random phrase to the game board display
 function addPhraseToDisplay(arr) {
-     const ul = document.querySelector('ul');
      for (let i = 0; i < arr.length; i += 1) {
           let li = document.createElement('li');
           li.textContent = arr[i];
@@ -43,4 +41,7 @@ function addPhraseToDisplay(arr) {
      }
 }
 
+
+// Call functions
+const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
