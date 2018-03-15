@@ -24,9 +24,10 @@
 *LinkedIn:* https://www.linkedin.com/in/geoff-lewis-696286a8  
 *GitHub:* https://github.com/geoffreylewis
 
-**Team Treehouse**  
-*For providing the HTML and CSS on this project so I could solely focus on the JavaScript.*
+**Team Treehouse**
 
 ## Acknowledgements
 
-...
+I'd like to thank Team Treehouse for providing another great project idea through their "Front End Web Development" techdegree.  This whole process has been an extremely valuable learning experience for me.
+
+I'd also like to thank them for providing the HTML and CSS on this project so that I could solely focus on the JavaScript aspect of this since that was the entire point.
