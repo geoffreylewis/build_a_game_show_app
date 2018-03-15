@@ -24,7 +24,7 @@
 *LinkedIn:* https://www.linkedin.com/in/geoff-lewis-696286a8  
 *GitHub:* https://github.com/geoffreylewis
 
-**Team Treehouse**
+**Team Treehouse**  
 *For providing the HTML and CSS on this project so I could solely focus on the JavaScript.*
 
 ## Acknowledgements
