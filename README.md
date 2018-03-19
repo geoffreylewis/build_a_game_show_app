@@ -12,7 +12,7 @@
 * CSS3
 * JavaScript
 
-## Additional Notes
+## Version History
 
 ...
 
