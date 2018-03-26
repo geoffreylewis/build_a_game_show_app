@@ -24,7 +24,8 @@
 *LinkedIn:* https://www.linkedin.com/in/geoff-lewis-696286a8  
 *GitHub:* https://github.com/geoffreylewis
 
-**Team Treehouse**
+**Team Treehouse**  
+*Website:* https://teamtreehouse.com/create  
 
 ## Acknowledgements
 
