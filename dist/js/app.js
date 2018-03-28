@@ -38,12 +38,14 @@ function addPhraseToDisplay(arr) {
           li.textContent = arr[i];
           if (li.textContent != " ") {
                li.className = 'letter';
+          } else {
+               li.className = 'space';
           }
           ul.appendChild(li);
      }
 }
 
-//
+// Check to see if letter clicked is a correct guess
 function checkLetter (buttonClicked) {
      let squaresWithLetters = document.getElementsByClassName('letter');
      let matchingLetter = null;
@@ -51,6 +53,9 @@ function checkLetter (buttonClicked) {
           if (squaresWithLetters[i].textContent === buttonClicked.textContent) {
                squaresWithLetters[i].className += ' show';
                let matchingLetter = buttonClicked.textContent;
+          } else if (squaresWithLetters[i].textContent === buttonClicked.textContent.toUpperCase()) {
+               squaresWithLetters[i].className += ' show';
+               let matchingLetter = buttonClicked.textContent.toUpperCase();
           }
      }
      return matchingLetter;
