@@ -1,4 +1,6 @@
-// Global variables
+/*******************
+* Global variables *
+*******************/
 const startScreen = document.getElementById('overlay');
 const startButton = document.getElementsByClassName('btn__reset')[0];
 const qwertyKeyboard = document.getElementById('qwerty');
@@ -7,13 +9,9 @@ const ul = document.querySelector('ul');
 let missed = 0;
 
 
-// Hides start screen overlay when start button is clicked
-startButton.addEventListener('click', () => {
-     startScreen.style.display = 'none';
-});
-
-
-//  Phrases to guess
+/*******************
+* Phrases to guess *
+*******************/
 const phrases = ['A state of society where men may not speak their minds cannot long endure',
                  'I like a man who grins when he fights',
                  'History is written by the victors',
@@ -21,13 +19,15 @@ const phrases = ['A state of society where men may not speak their minds cannot 
                  'Difficulties mastered are opportunities won'];
 
 
+/************
+* Functions *
+************/
 // Randomly choose any phrase and split it
 function getRandomPhraseAsArray(phr) {
      const randomPhrase = phr[Math.floor(Math.random()*phr.length)];
      const splitRandomPhrase = randomPhrase.split("");
      return splitRandomPhrase;
 }
-
 
 // Add random phrase to the game board display as empty boxes
 function addPhraseToDisplay(arr) {
@@ -41,6 +41,14 @@ function addPhraseToDisplay(arr) {
      }
 }
 
+
+/**************
+* Actual Game *
+**************/
+// Hides start screen overlay when start button is clicked
+startButton.addEventListener('click', () => {
+     startScreen.style.display = 'none';
+});
 
 // Call functions
 const phraseArray = getRandomPhraseAsArray(phrases);
