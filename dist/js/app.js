@@ -2,12 +2,15 @@
 * Global variables *
 *******************/
 const startScreen = document.getElementById('overlay');
+let startTitle = document.getElementsByClassName('title')[0];
 const startButton = document.getElementsByClassName('btn__reset')[0];
 const qwertyKeyboard = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const ul = document.querySelector('ul');
 let missed = 0;
-let totalHearts = document.getElementsByClassName('tries');
+let squaresWithLetters = document.getElementsByClassName('letter');
+let totalHearts = document.getElementsByTagName('img');
+let missingHearts = -1;
 
 
 
@@ -48,7 +51,6 @@ function addPhraseToDisplay(arr) {
 
 // Check to see if letter clicked is a correct guess
 function checkLetter (buttonClicked) {
-     let squaresWithLetters = document.getElementsByClassName('letter');
      let matchingLetter = null;
      for (let i = 0; i < squaresWithLetters.length; i += 1) {
           if (squaresWithLetters[i].textContent === buttonClicked.textContent) {
@@ -67,9 +69,13 @@ function checkWin () {
      let squaresGuessedCorrectly = document.getElementsByClassName('show');
      if (squaresWithLetters.length === squaresGuessedCorrectly.length) {
           startScreen.className = 'win';
+          startTitle.textContent = 'You won.  Woohoo.  Yay.  Hooray.  Whatever.';
+          startButton.textContent = 'Play again?';
           startScreen.style.display = 'flex';
      } else if (missed >= 5) {
           startScreen.className = 'lose';
+          startTitle.textContent = 'Too many incorrect guesses; you lose. ' + ' Super loser.';
+          startButton.textContent = 'Play again?';
           startScreen.style.display = 'flex';
      }
 }
@@ -94,10 +100,10 @@ qwertyKeyboard.addEventListener('click', (e) => {
           e.target.className = 'chosen';
           e.target.disabled = 'true';
           let letterFound = checkLetter(e.target);
-          let currentHeart = totalHearts[totalHearts.length - missed];
           if (letterFound === null) {
                missed += 1;
-               currentHeart.getElementsByTagName('img')[0].src = 'images/lostHeart.png';
+               missingHearts += 1;
+               totalHearts[missingHearts].src = 'images/lostHeart.png';
           }
           checkWin();
      }
