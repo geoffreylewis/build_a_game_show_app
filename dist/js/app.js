@@ -7,6 +7,7 @@ const qwertyKeyboard = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const ul = document.querySelector('ul');
 let missed = 0;
+let totalHearts = document.getElementsByClassName('tries');
 
 
 
@@ -52,13 +53,25 @@ function checkLetter (buttonClicked) {
      for (let i = 0; i < squaresWithLetters.length; i += 1) {
           if (squaresWithLetters[i].textContent === buttonClicked.textContent) {
                squaresWithLetters[i].className += ' show';
-               let matchingLetter = buttonClicked.textContent;
+               matchingLetter = buttonClicked.textContent;
           } else if (squaresWithLetters[i].textContent === buttonClicked.textContent.toUpperCase()) {
                squaresWithLetters[i].className += ' show';
-               let matchingLetter = buttonClicked.textContent.toUpperCase();
+               matchingLetter = buttonClicked.textContent.toUpperCase();
           }
      }
      return matchingLetter;
+}
+
+// Check to see if player is winning or losing
+function checkWin () {
+     let squaresGuessedCorrectly = document.getElementsByClassName('show');
+     if (squaresWithLetters.length === squaresGuessedCorrectly.length) {
+          startScreen.className = 'win';
+          startScreen.style.display = 'flex';
+     } else if (missed >= 5) {
+          startScreen.className = 'lose';
+          startScreen.style.display = 'flex';
+     }
 }
 
 
@@ -78,8 +91,14 @@ addPhraseToDisplay(phraseArray);
 // Pays attention to the letters that are clicked on the keyboard by the player
 qwertyKeyboard.addEventListener('click', (e) => {
      if (e.target.tagName === 'BUTTON') {
-          e.target.className += ' chosen';
+          e.target.className = 'chosen';
           e.target.disabled = 'true';
-          checkLetter(e.target);
+          let letterFound = checkLetter(e.target);
+          let currentHeart = totalHearts[totalHearts.length - missed];
+          if (letterFound === null) {
+               missed += 1;
+               currentHeart.getElementsByTagName('img')[0].src = 'images/lostHeart.png';
+          }
+          checkWin();
      }
-})
+});
