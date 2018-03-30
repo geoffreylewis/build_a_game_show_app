@@ -5,7 +5,6 @@ const startScreen = document.getElementById('overlay');
 let startTitle = document.getElementsByClassName('title')[0];
 const startButton = document.getElementsByClassName('btn__reset')[0];
 const qwertyKeyboard = document.getElementById('qwerty');
-const phrase = document.getElementById('phrase');
 const ul = document.querySelector('ul');
 let missed = 0;
 let squaresWithLetters = document.getElementsByClassName('letter');

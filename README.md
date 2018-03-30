@@ -14,7 +14,9 @@
 
 ## Version History
 
-...
+**Version 1.0**  
+*3/4/2018*  
+* All of the JavaScript has been successfully run through JSHint; it only mentions some ES6 standards.
 
 ## Author(s)
 
