@@ -4,7 +4,7 @@
 
 ## Software Summary
 
-...
+This is a game show app that allows you to guess a random phrase.  You can only select a letter once; if you select a total of 5 letters that aren't in the phrase, it's game over.  Whether you win or lose, the game will give you a chance to restart the whole thing with a random phrase once again.
 
 ## Built With
 
@@ -15,7 +15,7 @@
 ## Version History
 
 **Version 1.0**  
-*3/4/2018*  
+*3/30/2018*  
 * All of the JavaScript has been successfully run through JSHint; it only mentions some ES6 standards.
 
 ## Author(s)
