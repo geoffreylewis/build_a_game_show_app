@@ -72,11 +72,17 @@ function checkWin () {
           startTitle.textContent = 'You won.  Woohoo.  Yay.  Hooray.  Whatever.';
           startButton.textContent = 'Play again?';
           startScreen.style.display = 'flex';
+          startButton.addEventListener('click', () => {
+               location.reload();
+          });
      } else if (missed >= 5) {
           startScreen.className = 'lose';
           startTitle.textContent = 'Too many incorrect guesses; you lose. ' + ' Super loser.';
           startButton.textContent = 'Play again?';
           startScreen.style.display = 'flex';
+          startButton.addEventListener('click', () => {
+               location.reload();
+          });
      }
 }
 
